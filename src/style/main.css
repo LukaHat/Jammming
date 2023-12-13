@@ -64,4 +64,52 @@ table {
 input {
   -webkit-appearance: none;
   border-radius: 0;
+}
+
+* {
+  color: white;
+}
+
+.body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 128, 0, 0.8)), url("../assets/background.jpg");
+  width: 100%;
+  height: 93vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.searchContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.searchContainer .searchBar {
+  width: 20vw;
+  height: 5vh;
+  margin-top: 10vh;
+  background: white;
+  color: black;
+  border: 2px solid rgb(42, 252, 152);
+  border-radius: 20px;
+  font-size: 1.2em;
+  text-indent: 1em;
+  transition: 500ms;
+}
+.searchContainer .searchButton {
+  margin-top: 5vh;
+  height: 5vh;
+  width: 10vh;
+  background-color: black;
+  color: white;
+  border: 2px solid rgb(42, 252, 152);
+  font-size: 1em;
+  border-radius: 20px;
+  transition: 500ms;
+}
+.searchContainer .searchButton:hover {
+  scale: 1.1;
+  color: rgb(42, 252, 152);
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
