@@ -7,8 +7,10 @@ export const Body = () => {
   return (
     <main className="body">
       <SearchBar />
-      <SearchResults />
-      <Playlist />
+      <section className="main-section">
+        <SearchResults />
+        <Playlist />
+      </section>
     </main>
   );
 };

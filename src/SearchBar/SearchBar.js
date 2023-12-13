@@ -8,15 +8,15 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="searchContainer">
+    <div className="search-container">
       <input
         type="text"
         placeholder="Enter song name..."
         id="searchBar"
         onChange={handleInput}
-        className="searchBar"
+        className="search-bar"
       />
-      <button className="searchButton">Search</button>
+      <button className="search-button">Search</button>
       <p>{input}</p>
     </div>
   );

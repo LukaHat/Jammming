@@ -1,11 +1,11 @@
-.searchContainer {
+.search-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.searchContainer .searchBar {
+.search-container .search-bar {
   width: 20vw;
   height: 5vh;
   margin-top: 10vh;
@@ -17,7 +17,7 @@
   text-indent: 1em;
   transition: 500ms;
 }
-.searchContainer .searchButton {
+.search-container .search-button {
   margin-top: 5vh;
   height: 5vh;
   width: 10vh;
@@ -28,7 +28,7 @@
   border-radius: 20px;
   transition: 500ms;
 }
-.searchContainer .searchButton:hover {
+.search-container .search-button:hover {
   scale: 1.1;
   color: rgb(42, 252, 152);
   cursor: pointer;
