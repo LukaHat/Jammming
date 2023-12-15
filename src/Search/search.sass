@@ -1,0 +1,111 @@
+@import '../style/mixins'
+@import '../style/variables'
+
+.search-container
+    width: 100%
+    +displayFlex
+    flex-direction: column
+    .search-bar
+        width: 60vw
+        height: 5vh
+        margin-top: 5vh
+        background: white 
+        color: black
+        border: 2px solid $spring-green
+        border-radius: 20px
+        font-size: 1.2em
+        text-indent: 1em
+        transition: 500ms
+        font-family: 'Archivo Black', sans-serif
+    .search-button
+        margin-top: 2vh
+        margin-bottom: 1vh
+        height: 5vh
+        width: 10vh
+        background-color: black
+        color: white
+        border: 2px solid $spring-green
+        font-size: 1em
+        border-radius: 20px
+        transition: 500ms
+        font-family: 'Archivo Black', sans-serif
+        &:hover
+            scale: 1.1
+            color: $spring-green
+            cursor: pointer
+.main-section
+    width: 100%
+    height: auto
+    +displayFlex
+    gap: 3vw
+    font-family: 'Archivo Black', sans-serif
+    .section-part
+        width: 45vw
+        height: 65vh
+        background-color: rgba(0, 0, 0, 0.6)
+        border-radius: 5%
+        +displayFlex
+        flex-direction: column
+        .section-header
+            font-size: 2.2em
+            align-self: flex-start
+            margin-top: 2vh
+            margin-left: 2vw
+        .track-list
+            width: 100%
+        .track
+            padding-left: 2vw
+            padding-top: 1.5vh
+            height: 10vh
+            gap: 10%
+            border-bottom: 2px solid white
+            +displayFlex
+            justify-content: space-between
+            .song-title
+                font-size: 1.2em
+            .more-info
+                font-family: 'Afacad', sans-serif
+                +displayFlex
+                width: 10vw
+                gap: 0.2vw
+            .track-button
+                background: transparent 
+                border: none
+                font-size: 1.5em
+                transition: 200ms
+                padding-right: 5vw
+                &:hover
+                    cursor: pointer
+                    scale: 1.2
+                    transform: translateX(5px)
+                    color: $main
+    .playlist
+        +displayFlex
+        flex-direction: column
+        .playlist-name
+            background: transparent 
+            border: none
+            border-bottom: 2px solid white
+            width: 90%
+            height: 5vh
+            font-size: 2.2em
+            font-family: 'Archivo Black', sans-serif
+            margin-bottom: 2vh
+        .playlist-button
+            margin-top: 2vh
+            margin-bottom: 1vh
+            height: 7vh
+            width: 20vh
+            background-color: black
+            color: white
+            border: 2px solid $spring-green
+            font-size: 1em
+            border-radius: 20px
+            transition: 500ms
+            font-family: 'Archivo Black', sans-serif
+            &:hover
+                scale: 1.1
+                color: $spring-green
+                cursor: pointer
+            
+            
