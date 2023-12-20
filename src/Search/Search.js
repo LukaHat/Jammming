@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchResults from "./SearchResults";
-import Playlist from "./Playlist";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,10 +8,10 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const client_id = "025404be47e84780a9da26fb7b901b51";
-  const client_secret = "a118e6e86e4b4b648c66b0dbe5607582";
   const redirect_uri = "http://localhost:3000/";
 
-  const scope = "user-read-private user-read-email";
+  const scope =
+    "user-read-private user-read-email playlist-modify-public playlist-modify-private";
 
   var url = "https://accounts.spotify.com/authorize";
   url += "?response_type=token";
@@ -20,18 +19,33 @@ const Search = () => {
   url += "&scope=" + encodeURIComponent(scope);
   url += "&redirect_uri=" + encodeURIComponent(redirect_uri);
 
+  useEffect(
+    () => {
+      const accessTokenExtraction = () => {
+        const urlParams = new URLSearchParams(
+          window.location.hash.substring(1)
+        );
+        const token = urlParams.get("access_token");
+
+        if (token) {
+          setAccessToken(token);
+          setTimeout(() => {
+            window.location.replace(url);
+          }, 3600000);
+        } else {
+          window.location.replace(url);
+        }
+      };
+
+      accessTokenExtraction();
+    },
+    [window.location.hash],
+    accessToken
+  );
+
   useEffect(() => {
-    const accessTokenExtraction = () => {
-      const urlParams = new URLSearchParams(window.location.hash.substring(1));
-      const token = urlParams.get("access_token");
-
-      if (token) {
-        setAccessToken(token);
-      }
-    };
-
-    accessTokenExtraction();
-  }, [window.location.hash]);
+    console.log(searchResults);
+  }, [searchResults]);
 
   const handleSearch = async () => {
     try {
@@ -39,7 +53,7 @@ const Search = () => {
         params: {
           q: searchQuery,
           type: "track",
-          limit: 4,
+          limit: 20,
         },
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -68,8 +82,7 @@ const Search = () => {
         </button>
       </div>
       <section className="main-section">
-        <SearchResults results={searchResults} />
-        <Playlist accessToken={accessToken} />
+        <SearchResults results={searchResults} token={accessToken} />
       </section>
     </>
   );

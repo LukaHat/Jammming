@@ -1,6 +1,13 @@
 import React from "react";
 
-const Track = ({ name, artist, album }) => {
+const Track = ({ name, artist, album, uri, onAddToPlaylist, onDelete }) => {
+  const handleAddToPlaylist = () => {
+    onAddToPlaylist({ name, artist, album, uri });
+  };
+  const handleDelete = () => {
+    console.log(typeof onDelete);
+    onDelete({ name, artist, album, uri });
+  };
   return (
     <div className="track">
       <div className="song-info">
@@ -11,7 +18,9 @@ const Track = ({ name, artist, album }) => {
           <span className="album">{album}</span>
         </div>
       </div>
-      <button className="track-button">+</button>
+      <button className="track-button" onClick={handleAddToPlaylist}>
+        +
+      </button>
     </div>
   );
 };
