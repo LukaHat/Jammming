@@ -7,7 +7,7 @@ const Search = () => {
   const [accessToken, setAccessToken] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  const client_id = "025404be47e84780a9da26fb7b901b51";
+  const client_id = //enter client_id
   const redirect_uri = "http://localhost:3000/";
 
   const scope =
